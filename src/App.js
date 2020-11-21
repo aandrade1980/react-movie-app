@@ -16,7 +16,7 @@ const App = () => {
     JSON.parse(localStorage.getItem('react-movie-app-favourites'))
   );
 
-  const getMovieRequest = async searchValue => {
+  const getMovieRequest = async (searchValue) => {
     const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=339d1bc9`;
     const response = await fetch(url);
     const responseJson = await response.json();
@@ -30,11 +30,11 @@ const App = () => {
     getMovieRequest(searchValue);
   }, [searchValue]);
 
-  const saveToLocalStorage = items => {
+  const saveToLocalStorage = (items) => {
     localStorage.setItem('react-movie-app-favourites', JSON.stringify(items));
   };
 
-  const AddFavouritesMovie = movie => {
+  const AddFavouritesMovie = (movie) => {
     const isMovieInFavourites = favourites.includes(movie);
 
     if (!isMovieInFavourites) {
@@ -44,9 +44,9 @@ const App = () => {
     }
   };
 
-  const removeFavouriteMovie = movie => {
+  const removeFavouriteMovie = (movie) => {
     const newFavouriteList = favourites.filter(
-      favourite => favourite.imdbID !== movie.imdbID
+      (favourite) => favourite.imdbID !== movie.imdbID
     );
     setFavourites(newFavouriteList);
     saveToLocalStorage(newFavouriteList);
