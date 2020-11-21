@@ -26,6 +26,9 @@
       "pre-commit": "prettier --write . && git add -A ."
     }
   },
+  "lint-staged": {
+    "*": "prettier --write"
+  },
   "eslintConfig": {
     "extends": [
       "react-app",

@@ -1,19 +1,19 @@
-import React, { useEffect, useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
+import React, { useEffect, useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 
 // Components
-import MovieList from "./components/MovieList";
-import MovieListHeading from "./components/MovieListHeading";
-import SearchBox from "./components/SearchBox";
-import AddFavourites from "./components/AddFavourites";
-import RemoveFavourites from "./components/RemoveFavourites";
+import MovieList from './components/MovieList';
+import MovieListHeading from './components/MovieListHeading';
+import SearchBox from './components/SearchBox';
+import AddFavourites from './components/AddFavourites';
+import RemoveFavourites from './components/RemoveFavourites';
 
 const App = () => {
   const [movies, setMovies] = useState([]);
-  const [searchValue, setSearchValue] = useState("");
+  const [searchValue, setSearchValue] = useState('');
   const [favourites, setFavourites] = useState(
-    JSON.parse(localStorage.getItem("react-movie-app-favourites"))
+    JSON.parse(localStorage.getItem('react-movie-app-favourites'))
   );
 
   const getMovieRequest = async (searchValue) => {
@@ -31,7 +31,7 @@ const App = () => {
   }, [searchValue]);
 
   const saveToLocalStorage = (items) => {
-    localStorage.setItem("react-movie-app-favourites", JSON.stringify(items));
+    localStorage.setItem('react-movie-app-favourites', JSON.stringify(items));
   };
 
   const AddFavouritesMovie = (movie) => {

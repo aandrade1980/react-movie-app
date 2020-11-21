@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const SearchBox = ({ searchValue, setSearchValue }) => (
   <div className="col col-sm-4">
