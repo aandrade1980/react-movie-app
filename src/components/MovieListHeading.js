@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-const MovieListHeading = props => {
+const MovieListHeading = (props) => {
   return (
     <div className="col">
       <h1>{props.heading}</h1>
